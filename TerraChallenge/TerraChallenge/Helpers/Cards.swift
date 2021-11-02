@@ -8,6 +8,12 @@
 import Foundation
 
 func cards(requestManager: HTTPRequest) -> [SummaryCard]{
+    
+    let active_time = requestManager.dailyData.count <= 0 ? "_" : clip(value: requestManager.dailyData[0].active_durations_data.activity_seconds, transform: printTime)
+    let active_split = active_time.split(separator: ",")
+    let active_hours = active_time == "_" ? "_" : "\(active_split[0]) Hour\(active_split[0] == "1" ? "" : "s")"
+    let active_minutes = active_time == "_" ? "" : "\(active_split[1]) Min"
+    
     let bpm_card = SummaryCard(card: SummaryCardInfo(
         title: "Heart Beat",
         backgroundColor: .red,
@@ -39,8 +45,8 @@ func cards(requestManager: HTTPRequest) -> [SummaryCard]{
         title: "Activity",
         backgroundColor: .yellow,
         textColor: .white,
-        value: requestManager.dailyData.count <= 0 ? "_" : clip(value: requestManager.dailyData[0].active_durations_data.activity_seconds, transform: printTime),
-        unit: "HH:MM",
+        value: active_hours,
+        unit: active_minutes,
         logo: "timer"
     ))
     
@@ -79,5 +85,5 @@ func secondsToTime(seconds : Double) -> (Int, Int, Int) {
 
 func printTime (seconds: Double) -> String {
     let (h, m, _) = secondsToTime(seconds: seconds)
-    return String(format: "%02d:%02d", h, m)
+    return "\(h),\(m)"
 }
