@@ -35,13 +35,13 @@ func cards(requestManager: HTTPRequest) -> [SummaryCard]{
         logo: "figure.walk"
     ))
     
-    let distance_card = SummaryCard(card: SummaryCardInfo(
-        title: "Distance",
+    let active_card = SummaryCard(card: SummaryCardInfo(
+        title: "Activity",
         backgroundColor: .yellow,
         textColor: .white,
-        value: requestManager.dailyData.count <= 0 ? "_" : clip(value: requestManager.dailyData[0].distance_data.distance_metres, precision: 0),
-        unit: "M",
-        logo: "ruler.fill"
+        value: requestManager.dailyData.count <= 0 ? "_" : clip(value: requestManager.dailyData[0].active_durations_data.activity_seconds, transform: printTime),
+        unit: "HH:MM",
+        logo: "timer"
     ))
     
     let stress_level = SummaryCard(card: SummaryCardInfo(
@@ -53,7 +53,7 @@ func cards(requestManager: HTTPRequest) -> [SummaryCard]{
         logo: "aqi.medium"
     ))
     
-    let cards = [bpm_card, calories_card, steps_card, distance_card, stress_level]
+    let cards = [bpm_card, calories_card, steps_card, active_card, stress_level]
     
     return cards
 }
@@ -63,4 +63,21 @@ func clip(value: Double?, precision: Int) -> String {
         return String(format: "%.\(precision)f", value!)
     }
     return "_"
+}
+
+func clip(value: Double?, transform: (_ input: Double) -> String) -> String {
+    if((value) != nil){
+        return transform(value!)
+    }
+    return "_"
+}
+
+func secondsToTime(seconds : Double) -> (Int, Int, Int) {
+    let int_seconds = Int(seconds)
+    return (int_seconds / 3600, (int_seconds % 3600) / 60, (int_seconds % 3600) % 60)
+}
+
+func printTime (seconds: Double) -> String {
+    let (h, m, _) = secondsToTime(seconds: seconds)
+    return String(format: "%02d:%02d", h, m)
 }

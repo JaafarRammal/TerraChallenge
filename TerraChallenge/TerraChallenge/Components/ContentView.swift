@@ -32,7 +32,7 @@ struct ContentView: View {
                 }
                 .padding()
             }
-            .navigationBarTitle("Summary Dashboard")
+            .navigationBarTitle("Daily Summary")
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(
                 trailing: HStack{
