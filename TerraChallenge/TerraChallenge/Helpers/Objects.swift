@@ -9,23 +9,11 @@ import Foundation
 import SwiftUI
 
 // Summary Card Info
-struct SummaryCardInfo: Hashable {
+struct SummaryCardInfo: Hashable, Equatable {
     var title: String;
     var backgroundColor: Color;
     var textColor: Color;
     var value: String;
     var unit: String;
     var logo: String;
-}
-
-// Set of Cards
-struct SummaryCards {
-    var heartbeat = SummaryCardInfo(
-        title: "Heart Beat",
-        backgroundColor: .red,
-        textColor: .white,
-        value: "",
-        unit: "",
-        logo: ""
-    )
 }

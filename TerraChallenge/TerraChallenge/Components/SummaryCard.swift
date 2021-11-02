@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SummaryCard: View {
+struct SummaryCard: View, Hashable {
     var card: SummaryCardInfo;
     
     var body: some View {

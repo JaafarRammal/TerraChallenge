@@ -12,6 +12,7 @@ import Combine
 class HTTPRequest: ObservableObject {
 
     @Published var dailyData: [DailyData] = []
+    @Published var pullingData: Bool = false
 
     func requestDaily(date: Date) {
         
@@ -19,6 +20,7 @@ class HTTPRequest: ObservableObject {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let dateString = dateFormatter.string(from: date)
+        print(dateString)
         
         // create request
         guard var url = URLComponents(string: terra_endpoint + "/daily") else { return }
@@ -35,12 +37,14 @@ class HTTPRequest: ObservableObject {
         request.setValue(api_key, forHTTPHeaderField: "X-API-Key")
         
         // send request
+        pullingData = true
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data, let dataString = String(data: data, encoding: .utf8) {
                 let jsonData = dataString.data(using: .utf8)!
                 let apiRes: DailyAPIResponse = try! JSONDecoder().decode(DailyAPIResponse.self, from: jsonData)
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     self.dailyData = apiRes.data
+                    self.pullingData = false
                 }
             }
         }.resume()

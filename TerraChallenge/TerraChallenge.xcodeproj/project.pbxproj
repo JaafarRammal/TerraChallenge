@@ -22,7 +22,8 @@
 		E55DA8AA2731A31F009EEE19 /* OtherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DA8A92731A31F009EEE19 /* OtherData.swift */; };
 		E55DA8AC2731A32E009EEE19 /* DailyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DA8AB2731A32E009EEE19 /* DailyData.swift */; };
 		E55DA8AE2731A337009EEE19 /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DA8AD2731A337009EEE19 /* APIs.swift */; };
-		E55DA8B02731AA68009EEE19 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DA8AF2731AA68009EEE19 /* Functions.swift */; };
+		E55DA8B02731AA68009EEE19 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55DA8AF2731AA68009EEE19 /* Cards.swift */; };
+		E561B77B2731C1A800C5A888 /* DateSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = E561B77A2731C1A800C5A888 /* DateSelector.swift */; };
 		E595F2CD2730358A003013B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E595F2CC2730358A003013B3 /* AppDelegate.swift */; };
 		E595F2CF2730358A003013B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E595F2CE2730358A003013B3 /* SceneDelegate.swift */; };
 		E595F2D12730358A003013B3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E595F2D02730358A003013B3 /* ContentView.swift */; };
@@ -49,7 +50,8 @@
 		E55DA8A92731A31F009EEE19 /* OtherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherData.swift; sourceTree = "<group>"; };
 		E55DA8AB2731A32E009EEE19 /* DailyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyData.swift; sourceTree = "<group>"; };
 		E55DA8AD2731A337009EEE19 /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
-		E55DA8AF2731AA68009EEE19 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		E55DA8AF2731AA68009EEE19 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		E561B77A2731C1A800C5A888 /* DateSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSelector.swift; sourceTree = "<group>"; };
 		E595F2C92730358A003013B3 /* TerraChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TerraChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E595F2CC2730358A003013B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E595F2CE2730358A003013B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,10 +94,10 @@
 		E55DA89B2731A243009EEE19 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				E55DA8AF2731AA68009EEE19 /* Functions.swift */,
+				E54DDE2D27304C3900A23FA0 /* HTTPRequest.swift */,
+				E55DA8AF2731AA68009EEE19 /* Cards.swift */,
 				E54DDE2B2730485D00A23FA0 /* Objects.swift */,
 				E54DDE2F27304C6400A23FA0 /* Credentials.swift */,
-				E55DA89C2731A273009EEE19 /* Structures */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -114,6 +116,17 @@
 				E55DA8AB2731A32E009EEE19 /* DailyData.swift */,
 			);
 			path = Structures;
+			sourceTree = "<group>";
+		};
+		E561B7792731C19D00C5A888 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E595F2D02730358A003013B3 /* ContentView.swift */,
+				E54DDE26273037A300A23FA0 /* BarChart.swift */,
+				E55DA899273196A8009EEE19 /* SummaryCard.swift */,
+				E561B77A2731C1A800C5A888 /* DateSelector.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		E595F2C02730358A003013B3 = {
@@ -137,17 +150,15 @@
 		E595F2CB2730358A003013B3 /* TerraChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				E561B7792731C19D00C5A888 /* Components */,
 				E55DA89B2731A243009EEE19 /* Helpers */,
+				E55DA89C2731A273009EEE19 /* Structures */,
 				E595F2CC2730358A003013B3 /* AppDelegate.swift */,
 				E595F2CE2730358A003013B3 /* SceneDelegate.swift */,
-				E595F2D02730358A003013B3 /* ContentView.swift */,
 				E595F2D22730358C003013B3 /* Assets.xcassets */,
 				E595F2D72730358C003013B3 /* LaunchScreen.storyboard */,
 				E595F2DA2730358C003013B3 /* Info.plist */,
 				E595F2D42730358C003013B3 /* Preview Content */,
-				E54DDE26273037A300A23FA0 /* BarChart.swift */,
-				E54DDE2D27304C3900A23FA0 /* HTTPRequest.swift */,
-				E55DA899273196A8009EEE19 /* SummaryCard.swift */,
 			);
 			path = TerraChallenge;
 			sourceTree = "<group>";
@@ -278,6 +289,7 @@
 				E595F2CD2730358A003013B3 /* AppDelegate.swift in Sources */,
 				E595F2CF2730358A003013B3 /* SceneDelegate.swift in Sources */,
 				E55DA8A82731A2D0009EEE19 /* Calories.swift in Sources */,
+				E561B77B2731C1A800C5A888 /* DateSelector.swift in Sources */,
 				E54DDE3027304C6400A23FA0 /* Credentials.swift in Sources */,
 				E55DA8A62731A2C6009EEE19 /* Distance.swift in Sources */,
 				E55DA8AA2731A31F009EEE19 /* OtherData.swift in Sources */,
@@ -285,7 +297,7 @@
 				E55DA89A273196A8009EEE19 /* SummaryCard.swift in Sources */,
 				E55DA8A02731A28D009EEE19 /* Stress.swift in Sources */,
 				E55DA8A22731A2A3009EEE19 /* MET.swift in Sources */,
-				E55DA8B02731AA68009EEE19 /* Functions.swift in Sources */,
+				E55DA8B02731AA68009EEE19 /* Cards.swift in Sources */,
 				E54DDE2E27304C3900A23FA0 /* HTTPRequest.swift in Sources */,
 				E55DA89E2731A280009EEE19 /* Activity.swift in Sources */,
 				E54DDE2C2730485D00A23FA0 /* Objects.swift in Sources */,
