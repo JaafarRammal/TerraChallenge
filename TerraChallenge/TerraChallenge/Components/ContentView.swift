@@ -24,7 +24,7 @@ struct ContentView: View {
             ScrollView{
                 VStack{
                     DateSelector(current_date: $current_date, dateChanged: {self.requestManager.requestDaily(date: current_date)})
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 20) {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))], spacing: 10) {
                         ForEach(cards(requestManager: requestManager), id: \.self) { card in
                             card
                         }
