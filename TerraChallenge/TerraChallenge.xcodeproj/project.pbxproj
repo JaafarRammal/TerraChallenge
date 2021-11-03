@@ -30,6 +30,7 @@
 		E595F2D32730358C003013B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E595F2D22730358C003013B3 /* Assets.xcassets */; };
 		E595F2D62730358C003013B3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E595F2D52730358C003013B3 /* Preview Assets.xcassets */; };
 		E595F2D92730358C003013B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E595F2D72730358C003013B3 /* LaunchScreen.storyboard */; };
+		E5F58D2427329AB3006FDC7C /* FlipCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F58D2327329AB3006FDC7C /* FlipCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		E595F2D52730358C003013B3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E595F2D82730358C003013B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E595F2DA2730358C003013B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5F58D2327329AB3006FDC7C /* FlipCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				E54DDE26273037A300A23FA0 /* BarChart.swift */,
 				E55DA899273196A8009EEE19 /* SummaryCard.swift */,
 				E561B77A2731C1A800C5A888 /* DateSelector.swift */,
+				E5F58D2327329AB3006FDC7C /* FlipCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				E55DA8A82731A2D0009EEE19 /* Calories.swift in Sources */,
 				E561B77B2731C1A800C5A888 /* DateSelector.swift in Sources */,
 				E54DDE3027304C6400A23FA0 /* Credentials.swift in Sources */,
+				E5F58D2427329AB3006FDC7C /* FlipCard.swift in Sources */,
 				E55DA8A62731A2C6009EEE19 /* Distance.swift in Sources */,
 				E55DA8AA2731A31F009EEE19 /* OtherData.swift in Sources */,
 				E55DA8AC2731A32E009EEE19 /* DailyData.swift in Sources */,
